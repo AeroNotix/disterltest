@@ -1,0 +1,28 @@
+apiVersion: apps/v1beta1
+kind: StatefulSet
+metadata:
+  name: disterltest-statefulset
+spec:
+  serviceName: disterltest
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: disterltest
+    spec:
+      containers:
+        - name: disterltest
+          image: gcr.io/ubic-161022/disterltest
+          ports:
+            - containerPort: 4369
+            - containerPort: 10000
+            - containerPort: 10001
+            - containerPort: 10002
+            - containerPort: 10003
+            - containerPort: 10004
+            - containerPort: 10005
+          env:
+            - name: NODE
+              valueFrom:
+                fieldRef:
+                  fieldPath: status.podIP
