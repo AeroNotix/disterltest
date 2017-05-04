@@ -1,18 +1,17 @@
-apiVersion: apps/v1beta1
-kind: StatefulSet
+apiVersion: extensions/v1beta1
+kind: Deployment
 metadata:
-  name: disterltest-statefulset
+  name: $GCLOUD_APP
 spec:
-  serviceName: disterltest
   replicas: 3
   template:
     metadata:
       labels:
-        app: disterltest
+        app: $GCLOUD_APP
     spec:
       containers:
-        - name: disterltest
-          image: gcr.io/ubic-161022/disterltest
+        - name: $GCLOUD_APP
+          image: gcr.io/$GCLOUD_PROJECT/$GCLOUD_APP
           ports:
             - containerPort: 4369
             - containerPort: 10000

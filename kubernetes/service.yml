@@ -10,21 +10,6 @@ spec:
     - port: 10000
       targetPort: 10000
       name: disterl-mesh-0
-    - port: 10001
-      targetPort: 10001
-      name: disterl-mesh-1
-    - port: 10002
-      targetPort: 10002
-      name: disterl-mesh-2
-    - port: 10003
-      targetPort: 10003
-      name: disterl-mesh-3
-    - port: 10004
-      targetPort: 10004
-      name: disterl-mesh-4
-    - port: 10005
-      targetPort: 10005
-      name: disterl-mesh-5
     - port: 4369
       targetPort: 4369
       name: epmd
